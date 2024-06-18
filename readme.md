@@ -13,7 +13,9 @@
 
 fork 后，修改自己仓库的 `url.csv`，然后在 Vercel 平台上导入自己的项目
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FSmart-Chou%2FRandom-Picture)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FSmart-Chou%2FRandom-Images)
+
+第一次部署可能不成功，将nodejs版本改成18，再次部署就行。
 
 ## 项目参考
 
