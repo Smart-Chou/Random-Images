@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.6.2",
+      "excludeFiles": "{picture/**}",
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/images",
+      "dest": "/api/images.php"
+    },
+    {
+      "src": "/images/(.*?)",
+      "dest": "/api/images.php?folder=$1"
+    }
+  ]
+}

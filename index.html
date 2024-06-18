@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>随机图片api</title>
+        <meta name="description" content="随机图片api" />
+        <meta name="keywords" content="随机图片api,随机壁纸API,随机动漫壁纸" />
+        <link rel="stylesheet" type="text/css" href="imgweb.css" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <style>
+            body {
+                background-image: url('https://pic.mch.icu/images');
+            }
+        </style>
+        <main class="content">
+            <div class="warp">
+                <section>
+                    <h1>随机图片API</h1>
+                    <h3>说明文档</h3>
+                </section>
+                <section>
+                    <h2><strong>假定 API 部署到 https://example.net/</strong></h2>
+                    <p>
+                        访问
+                        <a href="https://example.net/images">https://example.net/images</a>
+                        ，生成随机图片。
+                    </p>
+                    <p>
+                        使用随机数载入的情况通常在一个页面多次调用随机图的时候， 比如首页文章列表，否则图片都是一样的。
+                        <br />
+                        随机数载入方式：“ <a href="https://example.net/images?fsdfsdfsdfsd ">https://example.net/images?fsdfsdfsdfsd</a> ”， 
+                        就是原有 URL 上添加一个英文问号和任意随机数。
+                    </p>
+                </section>
+            </div>
+        </main>
+        <script>
+            document.querySelector('main').innerHTML = document.querySelector('main').innerHTML.replace(/https:\/\/example.net/g, location.origin);
+            document.getElementById('scroll-down').addEventListener('click', function () {
+                document.querySelector('main').scrollIntoView({
+                    behavior: 'smooth',
+                });
+            });
+        </script>
+    </body>
+</html>
