@@ -1,8 +1,5 @@
 <IfModule mod_rewrite.c>
-
     RewriteEngine On
-
     RewriteRule ^images$ images.php [L,QSA]
     RewriteRule ^images/(.*?)$ api/images.php?folder=$1 [L]
-
 </IfModule>
