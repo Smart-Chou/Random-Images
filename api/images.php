@@ -13,11 +13,18 @@ function has_query($query)
     return isset($_GET[$query]);
 }
 
+// 从环境变量获取 Base URL
+$base_url = rtrim('https://' . $_ENV['BASE_URL'], '/'); // 确保没有多余的斜线
+
 // 读取 url.csv 文件中的图片链接
-if (file_exists(__DIR__ . '/../url.csv')) { // Adjusted to locate url.csv in parent directory
-    $imgs_array = file(__DIR__ . '/../url.csv', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$csv_path = __DIR__ . '/../url.csv';
+if (file_exists($csv_path)) {
+    $imgs_array = file($csv_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $imgs_array = array_map(function ($line) use ($base_url) {
+        return $base_url . '/' . ltrim($line, '/');
+    }, $imgs_array);
 } else {
-    $imgs_array = array('https://http.cat/503'); // Default if url.csv not found
+    $imgs_array = array('https://http.cat/503'); // 如果找不到url.csv，默认值
 }
 
 // 随机选择图片链接
@@ -80,4 +87,3 @@ if ($refer) {
     die;
 }
 ?>
-
