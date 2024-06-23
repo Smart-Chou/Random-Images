@@ -1,6 +1,6 @@
 <?php
 // 示例环境变量
-$_ENV['BASE_URL'] = 'https://example.net';
+$_ENV['BASE_URL'] = 'example.net';
 
 // 从环境变量获取 Base URL
 $base_url = rtrim('https://' . $_ENV['BASE_URL'], '/'); // 确保没有多余的斜线
