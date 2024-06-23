@@ -6,13 +6,13 @@
 
 ### env
 
-在 vercel 中设置环境变量 `BASE_URL`，如 `random-zpic.vercel.app`，纯域名。
+在 vercel 中设置环境变量 `BASE_URL`，如 `example.com`，纯域名。
 
 ### url.csv
 
 `url.csv` 文件中的每一行都是一个图床链接。
 
-例如原图片直链是 `https://random-zpic.vercel.app/**/xxx.png`，
+例如原图片直链是 `https://example.com/**/xxx.png`，
 
 只需粘贴 `/**/xxx.png` 就可以了。
 
@@ -20,7 +20,7 @@
 
 ## 演示
 
-- <https://random-zpic.vercel.app/images>
+- <https://pic.mch.icu/images>
 
 > 演示图片来自<https://pic.marxchou.com>
 
